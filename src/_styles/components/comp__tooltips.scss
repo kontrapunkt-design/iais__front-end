@@ -1,0 +1,11 @@
+.qtip-default.comp__tooltips{
+  border: 1px solid rgba($color--primary, 0.5);
+  background: rgba($white, 0.8);
+  .qtip-tip{
+    display: none !important;
+  }
+  .qtip-content{
+    padding:$spacing--small;
+    background-color: transparent;
+  }
+}

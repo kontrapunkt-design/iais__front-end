@@ -1,0 +1,18 @@
+.comp__section--news_list
+  .comp__section__title
+    h5 News
+  .comp__section__content
+    .row
+      - each news in site.data.news_list
+        .comp__thumbnail--news.small-12.medium-6.column(class='#{news.class}')
+          a(href="#")
+            .comp__content
+              p.tag.label #{news.tag}
+              h4.title.title--news #{news.title}
+              if '#{news.teaser}'
+                p.teaser.teaser--news #{news.teaser}
+              p.meta.date #{news.date}
+  .comp__section__action
+    a.button.large
+      span.text more in news
+      span.icon

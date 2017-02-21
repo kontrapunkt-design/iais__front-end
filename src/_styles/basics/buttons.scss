@@ -1,0 +1,39 @@
+.button{
+  &:focus{
+    outline: none;
+    background-color: white;
+  }
+  &:hover{
+    background-color: black;
+    span.icon{
+      svg{
+        fill:white;
+      }
+    }
+  }
+  .comp__section__action &{
+    background-color: $color--accent;
+  }
+  &--with-icon{
+    padding: $spacing--small*1.75;
+    span.icon{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      svg{
+        margin: auto;
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill:black;
+      }
+    }
+  }
+  &--outlined{
+    border: 1px solid black;
+    padding: $spacing--small*1;
+    &:hover{
+    }
+  }
+}

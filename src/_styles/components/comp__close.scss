@@ -1,0 +1,29 @@
+.comp__close{
+  display: none;
+  padding:$spacing--small;
+  border-radius: 100%;
+  transition: all 0.3s $global-easeing;
+  position: absolute;
+  top: $spacing--large;
+  right: $spacing--large;
+  background-color: $color--accent;
+  &:hover{
+    cursor: pointer;
+    background-color: $color--primary;
+    .icon{
+      svg{
+        fill:white;
+      }
+    }
+  }
+  .icon{
+    width: 16px;
+    height: 16px;
+    svg{
+      fill:white;
+    }
+  }
+  .mobile-menu &{
+    display: block;
+  }
+}

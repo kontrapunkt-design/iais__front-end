@@ -1,0 +1,28 @@
+[class^='comp__thumbnail']{
+  position: relative;
+  >a, .mytooltip{
+    display: block;
+    padding-top: $spacing--medium;
+    padding-bottom: $spacing--large;
+    border-top: 1px solid $secondary-color;
+    transition: color 0.3s $global-easeing;
+    .teaser, .label, .tag{
+      transition: color 0.3s $global-easeing;
+    }
+    &:hover{
+      color: $color--accent;
+      border-color: $color--accent;
+      transition: color 0.3s $global-easeing;
+      cursor: pointer;
+      .teaser{
+        color: $color--accent;
+        transition: color 0.3s $global-easeing;
+      }
+      .label, .tag{
+        border-color: $color--accent;
+        color: $color--accent;
+        transition: color 0.3s $global-easeing;
+      }
+    }
+  }
+}

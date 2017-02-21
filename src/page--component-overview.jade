@@ -1,0 +1,29 @@
+extends _layouts/base
+block site--main
+  .container.container--primary-color
+    .row.align-center
+      .small-12.medium-10.column
+        include _modules/components/comp__front-hero
+  .container
+    .row
+      .small-12.column
+        include _modules/components/comp__section--news_list
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--magazine_list
+  .container.container--top-border
+    .row
+      .small-12.medium-6.column
+        include _modules/components/comp__section--publication_list
+      .small-12.medium-6.column
+        include _modules/components/comp__section--latest_list
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--seminars
+  .container.container--top-border
+    .row
+      .small-4.column
+        .mytooltip(data-url='index.html') display tooltips
+        

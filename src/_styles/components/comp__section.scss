@@ -1,0 +1,15 @@
+[class^='comp__section']{
+  .comp__section__title{
+    margin-bottom: $spacing--medium;
+    .meta{
+      margin-bottom: 0;
+    }
+    h1, h2, h3, h4, h5, h6, p{
+      // text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  .comp__section__action{
+
+  }
+}

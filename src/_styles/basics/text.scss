@@ -1,0 +1,29 @@
+.title{
+  font-weight: 600;
+}
+.teaser{
+  color: $secondary-color;
+}
+.label, .tag{
+  border: 1px solid $secondary-color;
+  font-size: $small-font-size;
+  text-transform: uppercase;
+}
+.navigation__list{
+  list-style: none;
+  margin: 0;
+  .list-item{
+    @extend h5;
+    font-weight: 600 !important;
+    margin-bottom: 0 !important;
+  }
+}
+.language__list{
+  list-style: none;
+  margin: 0;
+  .list-item{
+    margin-bottom: 0;
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+}

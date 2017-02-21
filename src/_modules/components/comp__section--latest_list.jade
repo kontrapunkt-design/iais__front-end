@@ -1,0 +1,17 @@
+.comp__section--latest_list
+  .comp__section__title
+    h5 latest from iais
+  .comp__section__content
+    .row
+      - each latest in site.data.latest_list
+        .comp__thumbnail--latest.small-12.column()
+          a(href="#")
+            .comp__content
+              p.tag.label #{latest.tag}
+              h4.title.title--latest #{latest.title}
+              p.teaser.teaser--latest #{latest.teaser}
+              p.meta.date #{latest.date}
+  .comp__section__action
+    a.button.large
+      span.text more in latest
+      span.icon

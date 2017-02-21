@@ -1,0 +1,20 @@
+.comp__section--magazine_list
+  .comp__section__title
+    p.meta magazine
+    h3 Articles from the January 2017 issue
+  .comp__section__content
+    .row
+      - each magazine in site.data.magazine_list
+        .comp__thumbnail--magazine.small-12.medium-6.large-4.column(class='')
+          a(href="#")
+            .comp__content
+              p.tag.label #{magazine.tag}
+              h4.title.title--magazine #{magazine.title}
+              p.teaser.teaser--magazine #{magazine.teaser}
+              p.meta.date #{magazine.date}
+            .comp__media
+              img(src='#{magazine.imgsrc}')
+  .comp__section__action
+    a.button.large
+      span.text more in magazine
+      span.icon

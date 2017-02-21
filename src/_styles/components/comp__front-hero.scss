@@ -1,0 +1,8 @@
+.comp__front-hero{
+  padding:$spacing--large 0;
+  .comp__content{
+    .title{
+      @extend h3;
+    }
+  }
+}

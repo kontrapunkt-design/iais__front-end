@@ -1,0 +1,41 @@
+.comp__toggle-menu{
+  display: none;
+  padding:$spacing--small;
+  border-radius: 100%;
+  transition: all 0.3s $global-easeing;
+  position: absolute;
+  top: $spacing--medium*1.5;
+  right: $spacing--large;
+  background-color: $color--accent;
+  z-index: $layer--overlay + 200;
+  &:hover{
+    cursor: pointer;
+    background-color: $color--primary;
+    .icon{
+      svg{
+        fill:white;
+      }
+    }
+  }
+  .icon{
+    width: 16px;
+    height: 16px;
+    svg{
+      fill:white;
+    }
+  }
+  .icon--close{
+    display: none;
+  }
+  .mobile-menu &{
+    display: block;
+  }
+  .mobile-menu--opened &{
+    .icon--toggle-menu{
+      display: none;      
+    }
+    .icon--close{
+      display: block;
+    }
+  }
+}

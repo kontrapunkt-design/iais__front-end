@@ -1,0 +1,10 @@
+.comp__logo{
+  display: block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin:$spacing--medium auto;
+  svg{
+    fill:$primary-color;
+  }
+}

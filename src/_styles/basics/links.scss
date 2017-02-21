@@ -1,0 +1,7 @@
+a{
+  display: inline-block;
+  color: $color--primary;
+  &:hover{
+    color: $color--accent;
+  }
+}

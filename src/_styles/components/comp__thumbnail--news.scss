@@ -1,0 +1,8 @@
+.comp__thumbnail--news{
+  &.featured{
+    .title{
+      @extend h1;
+      font-weight: 600 !important;
+    }
+  }
+}

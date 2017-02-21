@@ -1,0 +1,26 @@
+.comp__navigation
+  .row.collapse.align-middle
+    nav.navigation.column
+      ul.navigation__list#navLs
+        - each menu in site.data.menu
+          li.list-item
+            a(href="#")= menu.name
+    .comp__language-selector.column.shrink#LangLs
+      ul.language__list
+        li.list-item.active
+          a(href="#") 日本語
+        li.list-item
+          a(href="#") English
+    .comp__search.column.shrink#ToggleSearch
+      .toggle--search
+        .icon.icon--search
+          svg
+            use(xlink:href="images/svg-sprite.svg#icon--search")
+        .icon.icon--close
+          svg
+            use(xlink:href="images/svg-sprite.svg#icon--close")
+    .comp__search-form
+      .input-group
+        input.input-group-field(type='search')
+        .input-group-button
+          input.button(type='submit', value='検索')

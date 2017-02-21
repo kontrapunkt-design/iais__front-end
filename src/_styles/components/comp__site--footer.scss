@@ -1,0 +1,18 @@
+.comp__site--footer{
+  .comp__footer-link_list{
+    .navigation__list{
+      .list-item{
+        margin-bottom: $spacing--small !important;
+      }
+    }
+  }
+  .comp__footer-text{
+    margin-bottom: $spacing--medium;
+    .title{
+      margin-bottom: $spacing--small;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+}

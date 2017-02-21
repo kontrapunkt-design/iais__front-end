@@ -1,0 +1,29 @@
+.comp__site--footer
+  .row
+    .small-12.medium-12.large-5.column
+      .comp__footer-link_list
+        ul.navigation__list
+          - each menu in site.data.menu
+            li.list-item
+              a(href="#")= menu.name
+    .small-12.medium-6.large-4.column
+      .comp__footer-text
+        h6.title.address 
+          | 一般社団法人 行政情報システム研究所
+          br
+          | 100-0012
+          br
+          | 東京都千代田区日比谷公園1-3　市政会館1階
+        p.tel Tel: 03-3500-1121
+        p.fax Fax: 03-3500-1122
+        p.mail
+          a(href="#") info@iais.or.jp
+    .small-12.medium-6.large-3.column
+      .comp__footer-text
+        h6.title 調査普及部
+        p.tel Tel: 03-3500-1121
+        p.fax Fax: 03-3500-1122
+      .comp__footer-text
+        h6.title システム事業部
+        p.tel Tel: 03-3500-1125
+        p.fax Fax: 03-3500-1126
