@@ -13,6 +13,8 @@
                 p.teaser.teaser--news #{news.teaser}
               p.meta.date #{news.date}
   .comp__section__action
-    a.button.large
+    a.button.large.button--with-icon.button--outline.button--accent
       span.text more in news
-      span.icon
+      span.icon.icon--arrow01
+        svg
+          use(xlink:href="images/svg-sprite.svg#icon--arrow01")

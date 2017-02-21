@@ -1,4 +1,5 @@
 .button{
+  text-transform: uppercase;
   &:focus{
     outline: none;
     background-color: white;
@@ -17,14 +18,51 @@
   &--solid{
     border: none!important;
     background-color:$color--primary !important;
+    &.button--accent{
+      background-color:$color--accent !important;
+    }
+    &.button--primary{
+      background-color:$color--primary !important;
+    }
+  }
+  &--outline{
+    border-style: solid;
+    border-width: 1px;
+    background-color:transparent !important;
+    color: $color--primary ;
+    &.button--accent{
+      border-color: $color--accent;
+      color: $color--accent;
+      &:hover{
+        background-color: $color--accent !important;
+        color: $white;
+      }
+    }
+    &.button--primary{
+      border-color: $color--primary;
+      color: $color--primary;
+      &:hover{
+        background-color: $color--primary !important;
+        color: $white;
+      }
+    }
   }
   &--with-icon{
     padding: $spacing--small*1.75;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    span.text{
+      margin-left: $spacing--small;
+      margin-right: $spacing--small;
+    }
     span.icon{
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: auto;
       svg{
         margin: auto;
         display: block;
@@ -32,12 +70,25 @@
         height: 100%;
         fill:black;
       }
+      &--arrow01{
+        width: 9px;
+        height: 18px;
+        transform: translateY(-1.5px);
+      }
     }
-  }
-  &--outlined{
-    border: 1px solid black;
-    padding: $spacing--small*1;
-    &:hover{
+    &.button--accent{
+      &:hover{
+        span.icon{
+          svg{
+            fill:$white;
+          }
+        }
+      }
+      span.icon{
+        svg{
+          fill:$color--accent;
+        }
+      }
     }
   }
 }

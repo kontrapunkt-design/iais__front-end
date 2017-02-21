@@ -12,6 +12,8 @@
               p.teaser.teaser--latest #{latest.teaser}
               p.meta.date #{latest.date}
   .comp__section__action
-    a.button.large
+    a.button.large.button--with-icon.button--outline.button--accent
       span.text more in latest
-      span.icon
+      span.icon.icon--arrow01
+        svg
+          use(xlink:href="images/svg-sprite.svg#icon--arrow01")

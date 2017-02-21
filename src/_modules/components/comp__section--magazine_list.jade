@@ -15,6 +15,8 @@
             .comp__media
               img(src='#{magazine.imgsrc}')
   .comp__section__action
-    a.button.large
+    a.button.large.button--with-icon.button--outline.button--accent
       span.text more in magazine
-      span.icon
+      span.icon.icon--arrow01
+        svg
+          use(xlink:href="images/svg-sprite.svg#icon--arrow01")

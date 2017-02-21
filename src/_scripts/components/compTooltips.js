@@ -23,10 +23,17 @@ export default()=>{
           }
       },
       hide: {
-        event: 'click mouseleave'
+        event: 'click mouseleave',
           // event: false,
           // inactive: 500
       },
+      position: {
+         my: 'left top',
+         at: 'right top',
+         adjust: {
+             x: -10
+         }
+       },
       style: {
         classes: 'comp__tooltips'
       }

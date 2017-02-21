@@ -4,7 +4,7 @@
     display: block;
     padding-top: $spacing--medium;
     padding-bottom: $spacing--large;
-    border-top: 1px solid $secondary-color;
+    border-top: 3px solid $primary-color;
     transition: color 0.3s $global-easeing;
     .teaser, .label, .tag{
       transition: color 0.3s $global-easeing;

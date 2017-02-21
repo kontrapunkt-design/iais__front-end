@@ -1,0 +1,19 @@
+.comp__section--report_list
+  .comp__section__title
+    h5 report
+  .comp__section__content
+    .row
+      - each report in site.data.report_list
+        .comp__thumbnail--report.small-12.column
+          a.mytooltip(data-url='index.html')
+            .comp__content
+              p.tag.label #{report.tag}
+              h4.title.title--report #{report.title}
+              p.teaser.teaser--report #{report.teaser}
+              p.meta.date #{report.date}
+  .comp__section__action
+    a.button.large.button--with-icon.button--outline.button--accent
+      span.text more in report
+      span.icon.icon--arrow01
+        svg
+          use(xlink:href="images/svg-sprite.svg#icon--arrow01")
