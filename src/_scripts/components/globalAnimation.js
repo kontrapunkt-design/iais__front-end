@@ -2,7 +2,7 @@ import gsap from 'gsap'
 
 let searchForm = document.querySelector('.comp__search-form');
 let inputGroup = document.querySelector('.comp__search-form .input-group');
-let searchInput = document.querySelector('.comp__search-form .input-group .input-group-field');
+let searchInput = document.querySelector('.comp__search-form .input-group .input--search');
 
 let navigation = document.querySelector('.site--header .comp__navigation');
 let navigationLsItem = document.getElementById('navLs').children;

@@ -3,9 +3,9 @@
     .small-12.medium-12.large-5.column
       .comp__footer-link_list
         ul.navigation__list
-          - each menu in site.data.menu
+          - each menu in site.data.menu_list
             li.list-item
-              a(href="#")= menu.name
+              a(href="#") #{menu.name}
     .small-12.medium-6.large-4.column
       .comp__footer-text
         h6.title.address 

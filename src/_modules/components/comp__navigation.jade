@@ -2,9 +2,9 @@
   .row.collapse.align-middle
     nav.navigation.column
       ul.navigation__list#navLs
-        - each menu in site.data.menu
+        - each menu in site.data.menu_list
           li.list-item
-            a(href="#")= menu.name
+            a(href="#") #{menu.name}
     .comp__language-selector.column.shrink#LangLs
       ul.language__list
         li.list-item.active
@@ -20,7 +20,13 @@
           svg
             use(xlink:href="images/svg-sprite.svg#icon--close")
     .comp__search-form
-      .input-group
-        input.input-group-field(type='search')
-        .input-group-button
-          input.button(type='submit', value='検索')
+      form.input-group
+        .row.collapse.align-center.align-middle
+          .column.shrink
+            select.select--topic.prefix
+              - each topic in site.data.topic_list
+                option(value='#{topic.name}') #{topic.name}
+          .column.medium-expand
+            input.input--search(type='search')
+          .column.shrink
+            a.button.large.postfix.button--solid(href="#") 検索

@@ -14,6 +14,10 @@
   .comp__section__action &{
     background-color: $color--accent;
   }
+  &--solid{
+    border: none!important;
+    background-color:$color--primary !important;
+  }
   &--with-icon{
     padding: $spacing--small*1.75;
     span.icon{
