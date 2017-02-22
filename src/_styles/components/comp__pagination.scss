@@ -1,0 +1,28 @@
+.comp__pagination{
+  padding:$spacing--medium 0;
+  .pagination{
+    margin: 0;
+    li{
+      padding:0;
+      a{
+        color: $color--primary;
+        padding:$spacing--small*0.5 $spacing--small*1.25;
+        &:hover{
+          color:$color--accent;
+          border-bottom: 5px solid $color--accent;
+        }
+      }
+      &.current{
+        a{
+          color:$color--accent;
+          border-bottom: 5px solid $color--accent;
+        }
+      }
+      &.ellipsis{
+        &:after{
+          content: '...';
+        }
+      }
+    }
+  }
+}

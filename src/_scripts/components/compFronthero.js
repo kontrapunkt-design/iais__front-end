@@ -18,10 +18,13 @@ export default()=>{
 
   let heroToggle = document.querySelector('.container--hero .comp__toggle--hero');
 
+  // get the targetheight for animation reverse
+  const targetHeight = document.querySelector('.container--hero').offsetHeight;
+
   heroToggle.addEventListener(
     'click',
     function(){
-      myToggle(this, heroAnimation());
+      myToggle(this, heroAnimation(targetHeight));
   });
 
 }

@@ -1,0 +1,14 @@
+.comp__pagination
+  ul(class="pagination" role="navigation" aria-label="Pagination")
+    li(class="pagination-previous disabled") Previous
+    li(class="current")
+      a.pagination__item(href='page--1.html' aria-label="Page 1") 1
+    - for (var i=2; i<5; i++)
+      li
+        a.pagination__item(href='page--#{i}.html' aria-label="Page #{i}")= i
+    li(class="ellipsis" aria-hidden="true")
+    - for (var i=20; i<23; i++)
+      li
+        a.pagination__item(href='page--#{i}.html' aria-label="Page #{i}")= i    
+    li(pagination-next)
+      a.pagination__item(href="#" aria-label="Next page") Next

@@ -88,15 +88,16 @@ export function mobileMenuAnimation(){
 
 }
 
-export function heroAnimation(){
+export function heroAnimation(targetHeight){
 
   let heroContainerHeight = document.querySelector('.container--hero').offsetHeight;
+  console.log(heroContainerHeight);
   let heroContainer = document.querySelector('.container--hero');
   let heroText = document.querySelector('.container--hero .comp__front-hero');
   let heroOverlay = document.querySelector('.container--hero .comp__overlay');
 
   let tweenHeroContainer = TweenMax.fromTo(heroContainer, 0.5, {
-    height: heroContainerHeight,
+    height: targetHeight,
     paddingTop: 72,
   }, {
     height: 0,
