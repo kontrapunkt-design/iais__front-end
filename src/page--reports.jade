@@ -1,3 +1,5 @@
+include _modules/components/comp__filter-group
+
 extends _layouts/base
 
 block scripts
@@ -14,7 +16,7 @@ block site--main
   .container.container--no-padding
     .row.align-left
       .small-12.column.shrink
-        include _modules/components/comp__filter-group
+        +comp__filter-group('isotopeFilter')
   .container.container--top-border.container--no-bottom-padding
     .row
       .small-12.column

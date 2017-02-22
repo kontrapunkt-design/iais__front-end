@@ -1,3 +1,4 @@
+include comp__filter-group
 .comp__navigation
   .row.collapse.align-middle
     nav.navigation.column
@@ -23,7 +24,7 @@
       form.input-group
         .row.collapse.align-center.align-middle
           .column.shrink
-            include comp__filter-group
+            +comp__filter-group('searchFilter')
           .column.medium-expand
             input.input--search(type='search')
           .column.shrink

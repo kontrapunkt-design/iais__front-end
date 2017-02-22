@@ -4,7 +4,7 @@
       .report-isotype-grid
         .grid-sizer
         - each report in site.data.report_list_overview
-          .comp__thumbnail--report.column
+          .comp__thumbnail--report.column(class='#{report.tag} all')
             a.mytooltip(data-url='index.html')
               .comp__content
                 p.tag.label #{report.tag}
