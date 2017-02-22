@@ -1,7 +1,12 @@
 extends _layouts/base
 block site--main
-  .container.container--primary-color
+  .container.container--primary-color.container--hero
+    .comp__overlay
     .row.align-center
+      .comp__toggle--hero
+        .icon.icon--close
+          svg
+            use(xlink:href="images/svg-sprite.svg#icon--close")
       .small-12.medium-10.column
         include _modules/components/comp__front-hero
   .container

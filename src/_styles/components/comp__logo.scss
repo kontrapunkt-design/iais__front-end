@@ -1,9 +1,13 @@
 .comp__logo{
   display: block;
   position: relative;
-  width: 231px;
-  height: 76px;
-  margin:$spacing--medium auto;
+  width: 100%;
+  height: auto;
+  .icon--logo{
+    width: 231px;
+    height: auto;
+    margin:$spacing--medium auto $spacing--medium 0;
+  }
   svg{
     fill:$primary-color;
   }

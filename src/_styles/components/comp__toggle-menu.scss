@@ -4,9 +4,10 @@
   border-radius: 100%;
   transition: all 0.3s $global-easeing;
   position: absolute;
-  top: $spacing--medium*1.5;
+  top: 50%;
   right: $spacing--large;
   background-color: $color--accent;
+  transform: translateY(-50%);
   z-index: $layer--overlay + 200;
   &:hover{
     cursor: pointer;
@@ -32,7 +33,7 @@
   }
   .mobile-menu--opened &{
     .icon--toggle-menu{
-      display: none;      
+      display: none;
     }
     .icon--close{
       display: block;

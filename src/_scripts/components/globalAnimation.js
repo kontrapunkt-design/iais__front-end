@@ -9,6 +9,10 @@ let navigationLsItem = document.getElementById('navLs').children;
 let LangLs = document.getElementById('LangLs');
 let ToggleSearch = document.getElementById('ToggleSearch');
 
+let heroContainer = document.querySelector('.container--hero');
+let heroContainerHeight = document.querySelector('.container--hero').offsetHeight;
+let heroText = document.querySelector('.container--hero .comp__front-hero');
+let heroOverlay = document.querySelector('.container--hero .comp__overlay');
 
 export function searchAnimation(){
 
@@ -84,6 +88,49 @@ export function mobileMenuAnimation(){
 
   return {
     animation: animationMobileMenu
+  }
+
+}
+
+export function heroAnimation(){
+  let tweenHeroContainer = TweenMax.fromTo(heroContainer, 0.5, {
+    height: heroContainerHeight,
+    paddingTop: 72,
+  }, {
+    height: 0,
+    paddingTop: 0,
+    ease: Sine.easeInOut,
+  });
+
+  let tweenHeroText = TweenMax.fromTo(heroText, 0.5, {
+    scaleX: 1,
+    scaleY: 1,
+    opacity: 1,
+    y: '',
+  }, {
+    scaleX: 0.8,
+    scaleY: 0.8,
+    opacity: 0.5,
+    y: -heroText.offsetHeight*0.2,
+    ease: Sine.easeInOut,
+  })
+
+  let tweenHeroOverlay = TweenMax.fromTo(heroOverlay, 0.2, {
+    display: 'none',
+    opacity: 0
+  }, {
+    display: 'block',
+    opacity: 1,
+    ease: Sine.easeInOut,
+  })
+
+  let animationHero = new TimelineMax()
+  .add([tweenHeroContainer, tweenHeroText])
+  .add(tweenHeroOverlay)
+  .pause();
+
+  return {
+    animation: animationHero
   }
 
 }

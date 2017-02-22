@@ -3,6 +3,7 @@ html, body{
   overflow-x: hidden;
   .container{
     padding:$spacing--large*1.5 0 $spacing--large*2.5;
+    position: relative;
     &--primary-color{
       background-color: $primary-color;
       color: $white;
@@ -11,15 +12,38 @@ html, body{
       border-top: 1px solid lighten($secondary-color, 40%);
     }
     &--bgcolor01{
-      background-color: lighten($secondary-color, 52%);
+      background-color: #E1EDF3;
+    }
+    &--no-padding{
+      padding:0;
+    }
+    &--hero{
+      .row{
+        position: relative;
+      }
     }
   }
 }
 .site--header{
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: $layer--navigation;
   background-color: $white;
+  &.header-sticky {
+    .comp__navigation{
+      position: fixed!important;
+      top: 0;
+      z-index: $layer--navigation;
+      width: 100%;
+      background-color: $white;
+      box-shadow: 0 10px 50px rgba($black, 0.3);
+    }
+    .mobile-menu &{
+      position: fixed;
+    }
+  }
+}
+.site--main{
 }
 html.mobile-menu--opened, html.mobile-menu--opened body{
   position: fixed;
