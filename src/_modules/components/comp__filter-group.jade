@@ -1,0 +1,4 @@
+.comp__filter-group
+  select.select--topic.prefix
+    - each topic in site.data.topic_list
+      option(value='#{topic.name}') #{topic.name}

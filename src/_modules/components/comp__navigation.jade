@@ -23,9 +23,7 @@
       form.input-group
         .row.collapse.align-center.align-middle
           .column.shrink
-            select.select--topic.prefix
-              - each topic in site.data.topic_list
-                option(value='#{topic.name}') #{topic.name}
+            include comp__filter-group
           .column.medium-expand
             input.input--search(type='search')
           .column.shrink
