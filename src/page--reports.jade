@@ -1,0 +1,22 @@
+extends _layouts/base
+
+block scripts
+  script(src= baseUrl + 'scripts/main.js')
+  script(src= baseUrl + 'scripts/main--reportIsotope.js')
+
+
+block site--main
+  .container.container--no-padding.container--top-border
+    .row.align-left
+      .small-12.column
+        .comp__page-title
+          h1 報告書
+  .container.container--no-padding
+    .row.align-left
+      .small-12.column
+        .comp__filter-group
+          p all topics
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section-overview--report_list

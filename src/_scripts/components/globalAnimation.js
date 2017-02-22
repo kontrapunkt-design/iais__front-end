@@ -9,10 +9,6 @@ let navigationLsItem = document.getElementById('navLs').children;
 let LangLs = document.getElementById('LangLs');
 let ToggleSearch = document.getElementById('ToggleSearch');
 
-let heroContainer = document.querySelector('.container--hero');
-let heroContainerHeight = document.querySelector('.container--hero').offsetHeight;
-let heroText = document.querySelector('.container--hero .comp__front-hero');
-let heroOverlay = document.querySelector('.container--hero .comp__overlay');
 
 export function searchAnimation(){
 
@@ -93,6 +89,12 @@ export function mobileMenuAnimation(){
 }
 
 export function heroAnimation(){
+
+  let heroContainerHeight = document.querySelector('.container--hero').offsetHeight;
+  let heroContainer = document.querySelector('.container--hero');
+  let heroText = document.querySelector('.container--hero .comp__front-hero');
+  let heroOverlay = document.querySelector('.container--hero .comp__overlay');
+
   let tweenHeroContainer = TweenMax.fromTo(heroContainer, 0.5, {
     height: heroContainerHeight,
     paddingTop: 72,

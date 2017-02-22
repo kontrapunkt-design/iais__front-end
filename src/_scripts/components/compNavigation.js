@@ -39,6 +39,7 @@ export default()=>{
       navigation.style.position = 'relative';
       navigation.style.display = 'block';
       navigation.style.opacity = 1;
+      siteLogo.style.width = '231px'
       TweenMax.set([navigationLsItem, LangLs, ToggleSearch], {
         opacity: 1,
         y: 0

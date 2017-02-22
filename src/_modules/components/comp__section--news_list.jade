@@ -9,7 +9,7 @@
             .comp__content
               p.tag.label #{news.tag}
               h4.title.title--news #{news.title}
-              if '#{news.teaser}'
+              if news.teaser
                 p.teaser.teaser--news #{news.teaser}
               p.meta.date #{news.date}
   .comp__section__action

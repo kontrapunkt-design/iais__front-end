@@ -5,7 +5,7 @@
     .row
       - each report in site.data.report_list
         .comp__thumbnail--report.small-12.column
-          a.mytooltip(data-url='index.html')
+          a(data-url='index.html')
             .comp__content
               p.tag.label #{report.tag}
               h4.title.title--report #{report.title}

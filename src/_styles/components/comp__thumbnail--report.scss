@@ -1,0 +1,13 @@
+.report-isotype-grid{
+  width: 100%;
+  display: block;
+  .grid-sizer, .comp__thumbnail--report{
+    width: 100%;
+    @include breakpoint(medium){
+      width: 50%;
+    }
+    @include breakpoint(large){
+      width: 33%;
+    }
+  }
+}

@@ -30,6 +30,7 @@ html, body{
   z-index: $layer--navigation;
   background-color: $white;
   &.header-sticky {
+    box-shadow: 0 10px 50px rgba($black, 0.3);
     .comp__navigation{
       position: fixed!important;
       top: 0;
