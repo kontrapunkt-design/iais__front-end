@@ -1,11 +1,31 @@
 .comp__site--footer
-  .row
-    .small-12.medium-12.large-5.column
-      .comp__footer-link_list
-        ul.navigation__list
-          - each menu in site.data.menu_list
+  .row.align-right
+    .small-12.large-5.column
+      .row
+        .comp__site--footer__link_list.small-6.column
+          ul.navigation__list
+            - each menu in site.data.menu_list
+              li.list-item
+                a(href="#{menu.link}") #{menu.name}
+        .comp__site--footer__social-link_list.small-12.column
+          ul.social-link__list
             li.list-item
-              a(href="#") #{menu.name}
+              a(href="www.facebook.com")
+                .icon.icon--facebook
+                  svg
+                    use(xlink:href="images/svg-sprite.svg#icon--facebook")
+            li.list-item
+              a(href="www.facebook.com")
+                .icon.icon--facebook
+                  svg
+                    use(xlink:href="images/svg-sprite.svg#icon--facebook")
+        //- .comp__footer-link_list.small-6.column
+        //-   ul.navigation__list.navigation__list--submenu
+        //-     - each menu in site.data.menu_list
+        //-       if menu.submenu
+        //-         - each submenu in menu.submenu
+        //-           li.list-item
+        //-             a(href='#{submenu.link}') #{submenu.name}
     .small-12.medium-6.large-4.column
       .comp__footer-text
         h6.title.address 
@@ -14,16 +34,21 @@
           | 100-0012
           br
           | 東京都千代田区日比谷公園1-3　市政会館1階
-        p.tel Tel: 03-3500-1121
+        p.google-link
+          a(href="www.google.com") find us in google map
+        p.tel
+          a(href="tel:+6494461709") Tel: 03-3500-1121
         p.fax Fax: 03-3500-1122
         p.mail
           a(href="#") info@iais.or.jp
     .small-12.medium-6.large-3.column
       .comp__footer-text
         h6.title 調査普及部
-        p.tel Tel: 03-3500-1121
+        p.tel
+          a(href="tel:+6494461709") Tel: 03-3500-1121
         p.fax Fax: 03-3500-1122
       .comp__footer-text
         h6.title システム事業部
-        p.tel Tel: 03-3500-1125
+        p.tel
+         a(href="tel:+6494461709") Tel: 03-3500-1125
         p.fax Fax: 03-3500-1126

@@ -4,4 +4,7 @@ a{
   &:hover{
     color: $color--accent;
   }
+  &.tel{
+    border-bottom: none !important;
+  }
 }

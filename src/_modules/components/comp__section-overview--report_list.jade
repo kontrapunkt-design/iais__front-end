@@ -4,13 +4,14 @@
       .report-isotype-grid
         .grid-sizer
         - each report in site.data.report_list_overview
-          .comp__thumbnail--report.column(class='#{report.tag} all')
-            a.mytooltip(data-url='index.html')
-              .comp__content
-                p.tag.label #{report.tag}
-                h4.title.title--report #{report.title}
-                p.teaser.teaser--report #{report.teaser}
-                p.meta.date #{report.date}
-              if report.imgsrc
-                .comp__media
-                  img(src='#{report.imgsrc}')
+          .column
+            .comp__thumbnail--report(class='#{report.tag} all')
+              a.mytooltip(data-url='page--tooltip-sample.html' href="#{report.href}")
+                .comp__content
+                  p.tag.label #{report.tag}
+                  h4.title.title--report #{report.title}
+                  p.teaser.teaser--report #{report.teaser}
+                  p.meta.date #{report.date}
+                if report.imgsrc
+                  .comp__media
+                    img(src='#{report.imgsrc}')

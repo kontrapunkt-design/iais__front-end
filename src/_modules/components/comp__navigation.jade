@@ -1,15 +1,25 @@
-include comp__filter-group
+include comp__filter
 .comp__navigation
   .row.collapse.align-middle
+    .comp__logo--mini.column.shrink
+      a(href="index.html")
+        .icon--logo--mini
+          svg(viewbox='0 0 80 60')
+            g(fill-rule='evenodd')
+              path(d='M0,49.0105263 L11.4526316,22.4 L15.0736842,22.4 L26.5263158,49.0105263 L21.0526316,49.0105263 L18.5263158,43.1157895 L7.91578947,43.1157895 L5.38947368,49.0105263 L0,49.0105263 Z M9.85263158,38.4842105 L16.5894737,38.4842105 L13.2210526,30.5684211 L9.85263158,38.4842105 Z', fill-rule='nonzero')
+              rect(fill-rule='nonzero', x='38.9894737', y='11.5368421', width='5.13684211', height='26.6105263')
+              path(d='M64.4210526,19.8736842 C65.9368421,21.5578947 68.2947368,22.8210526 70.7368421,22.8210526 C73.0105263,22.8210526 74.6105263,21.3894737 74.6105263,19.4526316 C74.6105263,16 69.6421053,15.5789474 66.1052632,13.4736842 C64,12.2947368 62.3157895,10.5263158 62.3157895,7.49473684 C62.3157895,2.77894737 66.6947368,0 71.0736842,0 C73.7684211,0 76.2947368,0.673684211 78.8210526,2.52631579 L76.1263158,6.31578947 C75.0315789,5.30526316 73.2631579,4.54736842 71.4947368,4.54736842 C69.5578947,4.54736842 67.3684211,5.38947368 67.3684211,7.41052632 C67.3684211,11.7052632 79.6631579,10.3578947 79.6631579,19.3684211 C79.6631579,24.0842105 75.4526316,27.3684211 70.6526316,27.3684211 C67.1157895,27.3684211 63.7473684,25.8526316 61.0526316,23.4105263 L64.4210526,19.8736842 Z', fill-rule='nonzero')
+              rect(fill-rule='nonzero', x='38.9052632', y='44.5473684', width='40.8421053', height='4.46315789')
+              rect(fill-rule='nonzero', x='60.7157895', y='33.7684211', width='19.0315789', height='4.46315789')
+              rect(fill-rule='nonzero', x='0', y='55.3263158', width='79.7473684', height='4.46315789')
     nav.navigation.column
       ul.navigation__list#navLs
         - each menu in site.data.menu_list
           li.list-item
-            a(href="#") #{menu.name}
+            a(href="#{menu.link}") #{menu.name}
     .comp__language-selector.column.shrink#LangLs
       ul.language__list
-        li.list-item.active
-          a(href="#") 日本語
+        li.list-item.active 日本語
         li.list-item
           a(href="#") English
     .comp__search.column.shrink#ToggleSearch
@@ -24,7 +34,7 @@ include comp__filter-group
       form.input-group
         .row.collapse.align-center.align-middle
           .column.shrink
-            +comp__filter-group('searchFilter')
+            +comp__filter('searchFilter')
           .column.medium-expand
             input.input--search(type='search')
           .column.shrink

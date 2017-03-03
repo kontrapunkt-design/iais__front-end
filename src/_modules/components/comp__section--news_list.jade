@@ -4,14 +4,15 @@
   .comp__section__content
     .row
       - each news in site.data.news_list
-        .comp__thumbnail--news.small-12.medium-6.column(class='#{news.class}')
-          a(href="#")
-            .comp__content
-              p.tag.label #{news.tag}
-              h4.title.title--news #{news.title}
-              if news.teaser
-                p.teaser.teaser--news #{news.teaser}
-              p.meta.date #{news.date}
+        .small-12.medium-6.column
+          .comp__thumbnail--news(class='#{news.class}')
+            a(href="#")
+              .comp__content
+                p.tag.label #{news.tag}
+                h4.title.title--news #{news.title}
+                if news.teaser
+                  p.teaser.teaser--news #{news.teaser}
+                p.meta.date #{news.date}
   .comp__section__action
     a.button.large.button--with-icon.button--outline.button--accent
       span.text more in news

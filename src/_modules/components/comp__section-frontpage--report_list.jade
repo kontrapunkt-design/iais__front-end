@@ -1,18 +1,19 @@
 .comp__section--report_list
   .comp__section__title
-    h5 report
+    h5 reports
   .comp__section__content
     .row
       - each report in site.data.report_list
-        .comp__thumbnail--report.small-12.column
-          a(data-url='index.html')
-            .comp__content
-              p.tag.label #{report.tag}
-              h4.title.title--report #{report.title}
-              p.teaser.teaser--report #{report.teaser}
-              p.meta.date #{report.date}
+        .small-12.column
+          .comp__thumbnail--report
+            a(href="#{report.href}")
+              .comp__content
+                p.tag.label #{report.tag}
+                h4.title.title--report #{report.title}
+                p.teaser.teaser--report #{report.teaser}
+                p.meta.date #{report.date}
   .comp__section__action
-    a.button.large.button--with-icon.button--outline.button--accent
+    a.button.large.button--with-icon.button--outline.button--accent(href="page--reports.html")
       span.text more in report
       span.icon.icon--arrow01
         svg

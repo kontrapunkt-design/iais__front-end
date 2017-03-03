@@ -1,0 +1,21 @@
+.comp__swiper-gallery
+  .comp__swiper-gallery__arrow
+    .swiper-button.swiper-button-prev
+      .icon.icon--arrow02
+        svg
+          use(xlink:href="images/svg-sprite.svg#icon--arrow02")
+    .swiper-button.swiper-button-next
+      .icon.icon--arrow02
+        svg
+          use(xlink:href="images/svg-sprite.svg#icon--arrow02")
+  .swiper-container
+    .swiper-wrapper
+      - each image in site.data.gallery_list
+        .comp__swiper-slide.swiper-slide
+          .comp__media
+            img(src="#{image.imgsrc}")
+          .comp__content
+            p #{image.title}
+            p #{image.description}
+  // Add Pagination
+  .swiper-pagination

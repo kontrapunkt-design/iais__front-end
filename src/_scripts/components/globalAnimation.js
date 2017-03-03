@@ -4,21 +4,27 @@ let searchForm = document.querySelector('.comp__search-form');
 let inputGroup = document.querySelector('.comp__search-form .input-group');
 let searchInput = document.querySelector('.comp__search-form .input-group .input--search');
 
-let navigation = document.querySelector('.site--header .comp__navigation');
-let navigationLsItem = document.getElementById('navLs').children;
+let navGroup = document.querySelector('.site--header .comp__navigation .navigation');
+let nav = document.querySelector('.site--header .comp__navigation');
+let navLs = document.getElementById('navLs');
+let navLsItem = document.getElementById('navLs').children;
 let LangLs = document.getElementById('LangLs');
 let ToggleSearch = document.getElementById('ToggleSearch');
 
+let LogoMini = document.querySelector('.comp__logo--mini');
 
 export function searchAnimation(){
 
   let tweenSearch = TweenMax.fromTo(searchForm, 0.2, {
     display: 'none',
     y: 100,
+    z: 0,
     opacity: 0
   }, {
     display: 'flex',
+    force3D:true,
     y: 0,
+    z: 0,
     opacity: 1,
     ease: Sine.easeInOut
   });
@@ -35,10 +41,19 @@ export function searchAnimation(){
     }
   })
 
+  let tweenNavGroup = TweenMax.staggerFromTo([navGroup, LangLs], 0.2, {
+    y: 0,
+    opacity: 1,
+  }, {
+    y: -50,
+    opacity: 0,
+  },0.05)
+
 
   let animationSearch = new TimelineMax()
-  .add(tweenSearch)
-  .add(tweenInputGroup)
+  .add([tweenNavGroup],0.15)
+  .add(tweenSearch,0.15)
+  .add(tweenInputGroup,0.15)
   .pause();
 
   return {
@@ -50,7 +65,7 @@ export function searchAnimation(){
 
 export function mobileMenuAnimation(){
 
-  let tweenMenuBg = TweenMax.fromTo(navigation, 0.2, {
+  let tweenMenuBg = TweenMax.fromTo(nav, 0.2, {
     opacity: 0,
     visibility: 'hidden'
   }, {
@@ -59,7 +74,7 @@ export function mobileMenuAnimation(){
     ease: Sine.easeInOut,
   })
 
-  let tweenMenuItem01 = TweenMax.staggerFromTo(navigationLsItem, 0.1, {
+  let tweenMenuItem01 = TweenMax.staggerFromTo(navLsItem, 0.1, {
     opacity: 0,
     y: -20
   },{
@@ -88,10 +103,31 @@ export function mobileMenuAnimation(){
 
 }
 
+export function logoMiniAnimation(){
+  let tweenLogoMini = TweenMax.fromTo(LogoMini, 0.2, {
+    display: 'none',
+    x: -LogoMini.offsetWidth*0.25,
+    opacity: '0',
+    delay: 0.5
+  }, {
+    display: 'block',
+    x: 0,
+    opacity: '1',
+    delay: 0.5
+  });
+
+
+  let animationLogoMini = new TimelineMax().add([tweenLogoMini]).pause();
+
+  return {
+    animation: animationLogoMini
+  }
+
+}
+
 export function heroAnimation(targetHeight){
 
   let heroContainerHeight = document.querySelector('.container--hero').offsetHeight;
-  console.log(heroContainerHeight);
   let heroContainer = document.querySelector('.container--hero');
   let heroText = document.querySelector('.container--hero .comp__front-hero');
   let heroOverlay = document.querySelector('.container--hero .comp__overlay');
@@ -134,6 +170,36 @@ export function heroAnimation(targetHeight){
 
   return {
     animation: animationHero
+  }
+
+}
+
+
+export function loading(){
+  let tweenLoadingCover = TweenMax.to('#cover', 0.2, {
+    opacity: 0,
+    scale: 0.95,
+    display: 'none'
+  })
+  let tweenLoadingText = TweenMax.to('.progressbar-text', 0.2, {
+    opacity:0,
+    display: 'none'
+  });
+  let tweenLoadingLogo = TweenMax.to('#cover .comp__logo', 0.2, {
+    opacity:0,
+    display: 'none',
+    onComplete: ()=>{
+      document.getElementsByTagName( 'html' )[0].style.overflow = 'auto';
+    }
+  });
+
+  let animationLoading = new TimelineMax()
+  .add([tweenLoadingText, tweenLoadingLogo])
+  .add(tweenLoadingCover, 0.6)
+  .pause();
+
+  return {
+    animation: animationLoading
   }
 
 }

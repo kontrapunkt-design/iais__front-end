@@ -1,9 +1,16 @@
 .comp__thumbnail--magazine{
+  // display: flex;
+  height: 100%;
   a{
     display: flex;
     flex-direction: column;
     align-items: bottom;
     justify-content:space-between;
     height: 100%;
+  }
+  .comp__media{
+    img{
+      max-width: 100%;
+    }
   }
 }

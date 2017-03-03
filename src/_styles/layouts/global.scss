@@ -9,10 +9,33 @@ html, body{
       color: $white;
     }
     &--top-border{
-      border-top: 1px solid lighten($secondary-color, 40%);
+      border-top: 1px solid lighten($color--background02, 32%);
     }
     &--bgcolor01{
-      background-color: #E1EDF3;
+      background-color: $color--background01;
+    }
+    &--2columns{
+      .column + .column{
+        [class^="comp__section--"]{
+          margin-top: $spacing--large*2;
+          @include breakpoint(medium up){
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    &--bgcolor02{
+      background-color: $color--background02;
+      color:$white;
+      a{
+        color:$white;
+        border-bottom:3px solid $white;
+        transition: border-color 0.2s $global-easeing;
+        &:hover{
+          border-color:$color--background02;
+          transition: border-color 0.2s $global-easeing;
+        }
+      }
     }
     &--no-padding{
       padding:0;
@@ -51,11 +74,14 @@ html, body{
 }
 html.mobile-menu--opened, html.mobile-menu--opened body{
   position: fixed;
+  width: 100%;
   height: 100%;
   overflow-y: hidden;
   .site--header{
     position: static;
   }
+}
+html.no-js{
 }
 .fixed{
   position: fixed;
@@ -66,4 +92,42 @@ svg{
   position: relative;
   width: 100%;
   height: 100%;
+}
+#cover{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color--primary;
+  z-index: $layer--overlay;
+  #loading-container{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute !important;
+    margin: auto;
+    .progressbar-text{
+      transform: translateX(-150%);
+    }
+  }
+  .comp__logo{
+    width: 320px;
+    height: auto;
+    display: block;
+    // position: absolute;
+    z-index: $layer--overlay + 100;
+    a{
+      pointer-events: none;
+    }
+    svg{
+      fill:$color--primary;
+    }
+  }
 }

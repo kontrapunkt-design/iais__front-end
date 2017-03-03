@@ -21,6 +21,7 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync) {
           './node_modules/normalize.css',
           './node_modules/foundation-sites/scss',
           './node_modules/qtip2/dist',
+          './node_modules/swiper/dist/css',
           path.join(dirs.source, dirs.styles),
           path.join(dirs.source, dirs.modules)
         ]

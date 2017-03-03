@@ -4,6 +4,9 @@
 .teaser{
   color: $secondary-color;
 }
+.text--accent{
+  color: $color--accent;
+}
 .label, .tag{
   border: 1px solid $secondary-color;
   font-size: $small-font-size;
@@ -16,6 +19,17 @@
     @extend h5;
     font-weight: 600 !important;
     margin-bottom: 0 !important;
+  }
+}
+p, blockquote{
+  a{
+    display: inline-block;
+    color: $color--accent;
+    border-bottom: 1px solid $color--accent;
+    &:hover{
+      color: $color--primary;
+      border-color: $color--primary;
+    }
   }
 }
 .language__list{

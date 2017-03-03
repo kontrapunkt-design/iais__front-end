@@ -1,6 +1,26 @@
 .comp__page-title{
   padding:$spacing--large 0 $spacing--small;
-  h1{
-    font-weight: bold;
+  &.comp__page-title--section{
+    h1{
+      font-weight: bold;
+      @extend h3;
+    }
+  }
+  .title-group{
+    border-top: 3px solid $color--primary;
+    border-bottom: 3px solid $color--primary;
+    padding:$spacing--large 0;
+    h1{
+      font-weight: 600;
+    }
+    .teaser{
+    }
+  }
+  .meta-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing--small;
   }
 }

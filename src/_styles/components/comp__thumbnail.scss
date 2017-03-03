@@ -1,9 +1,14 @@
 [class^='comp__thumbnail']{
   position: relative;
-  >a, .mytooltip{
+  .thumbnail{
+    padding-top: $spacing--small*1.5;
+    padding-bottom: $spacing--large*1.25;
+    border-top: 3px solid $primary-color;
+  }
+  a, .mytooltip{
     display: block;
-    padding-top: $spacing--medium;
-    padding-bottom: $spacing--large;
+    padding-top: $spacing--small*1.5;
+    padding-bottom: $spacing--large*1.25;
     border-top: 3px solid $primary-color;
     transition: color 0.3s $global-easeing;
     .teaser, .label, .tag{
@@ -57,5 +62,10 @@
         }
       }
     }
+  }
+}
+.container--bgcolor01, .container--bgcolor02{
+  .label, .tag{
+    background-color: white;
   }
 }

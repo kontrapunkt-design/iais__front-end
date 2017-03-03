@@ -1,15 +1,36 @@
 extends _layouts/base
 
-include _modules/link/link
+block scripts
+  script(src= baseUrl + 'scripts/main.js')
+  script(src= baseUrl + 'scripts/main--frontpage.js')
+
 
 block site--main
-  .container
-    .yeogurt-info
-      h1#myContent Welcome to Yeogurt!
-      p.
-        Take a look at the
-        #[+link({text: 'documentation'})(href='https://github.com/larsonjj/generator-yeogurt#yeogurt-generator---')]
-        and start mixing up something awesome.
-      p
-        img.logo(src="images/yeogurt-swirl.png", width="75px")
-  code.version v1.5.3
+  .container.container--primary-color.container--hero
+    .comp__overlay
+    //- .comp__toggle--hero
+      //- .icon.icon--close
+      //-   svg
+      //-     use(xlink:href="images/svg-sprite.svg#icon--close")
+    .row.align-left
+      .small-12.medium-10.column
+        include _modules/components/comp__front-hero
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--news_list
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--magazine_list
+  .container.container--top-border.container--bgcolor01.container--2columns
+    .row
+      .small-12.medium-6.column
+        include _modules/components/comp__section-frontpage--report_list
+      .small-12.medium-6.column
+        include _modules/components/comp__section--latest_list
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--seminars
+        

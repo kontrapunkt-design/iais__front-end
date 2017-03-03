@@ -1,0 +1,44 @@
+.comp__front-hero--B{
+  position: relative;
+  padding:0;
+  @include breakpoint(small only){
+    padding-bottom: 0;
+  }
+  .comp__action{
+    margin-top: $spacing--large;
+    .button--outline{
+      border-color: $white;
+      &:hover{
+        background-color: $white !important;
+        color: $color--primary;
+      }
+    }
+  }
+  .comp__content{
+    .title{
+      @extend h3;
+      line-height: 2em !important;
+      font-weight: 600 !important;
+    }
+    .highlight{
+      display: inline-block;
+      position: relative;
+      // font-weight: 600;
+      .line{
+        display: inline;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 0;
+        height: 7px;
+        background-color: darken($color--primary, 10%);
+        z-index: $layer--content - 1;
+      }
+      .text{
+        display: inline-block;
+        position: relative;
+        z-index: $layer--content;
+      }
+    }
+  }
+}

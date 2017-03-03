@@ -1,0 +1,32 @@
+[
+  {
+    "title": "image 1",
+    "description": "some description text",
+    "imgsrc": "images/aaron-ang-87527.jpg"
+  },
+  {
+    "title": "image 2",
+    "description": "some description text",
+    "imgsrc": "images/akram-shehadi-57720.jpg"
+  },
+  {
+    "title": "image 3",
+    "description": "some description text",
+    "imgsrc": "images/daryan-shamkhali-102731.jpg"
+  },
+  {
+    "title": "image 4",
+    "description": "some description text",
+    "imgsrc": "images/daryan-shamkhali-101888.jpg"
+  },
+  {
+    "title": "image 5",
+    "description": "some description text",
+    "imgsrc": "images/oskar-vertetics-53043.jpg"
+  },
+  {
+    "title": "image 5",
+    "description": "some description text",
+    "imgsrc": "images/redd-angelo-100370.jpg"
+  }
+]

@@ -5,15 +5,16 @@
   .comp__section__content
     .row
       - each magazine in site.data.magazine_list
-        .comp__thumbnail--magazine.small-12.medium-6.large-4.column(class='')
-          a(href="#")
-            .comp__content
-              p.tag.label #{magazine.tag}
-              h4.title.title--magazine #{magazine.title}
-              p.teaser.teaser--magazine #{magazine.teaser}
-              p.meta.date #{magazine.date}
-            .comp__media
-              img(src='#{magazine.imgsrc}')
+        .small-12.medium-6.large-4.column
+          .comp__thumbnail--magazine(class='')
+            a(href="#")
+              .comp__content
+                p.tag.label #{magazine.tag}
+                h4.title.title--magazine #{magazine.title}
+                p.teaser.teaser--magazine #{magazine.teaser}
+                p.meta.date #{magazine.date}
+              .comp__media
+                img(src='#{magazine.imgsrc}')
   .comp__section__action
     a.button.large.button--with-icon.button--outline.button--accent
       span.text more in magazine

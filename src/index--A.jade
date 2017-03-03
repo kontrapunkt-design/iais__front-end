@@ -1,0 +1,36 @@
+extends _layouts/base
+
+block scripts
+  script(src= baseUrl + 'scripts/main.js')
+  script(src= baseUrl + 'scripts/main--frontpage--A.js')
+
+
+block site--main
+  .container.container--primary-color.container--hero
+    .comp__overlay
+    //- .comp__toggle--hero
+      //- .icon.icon--close
+      //-   svg
+      //-     use(xlink:href="images/svg-sprite.svg#icon--close")
+    .row.align-left
+      .small-12.column
+        include _modules/components/comp__front-hero--A
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--news_list
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--magazine_list
+  .container.container--top-border.container--bgcolor01
+    .row
+      .small-12.medium-6.column
+        include _modules/components/comp__section-frontpage--report_list
+      .small-12.medium-6.column
+        include _modules/components/comp__section--latest_list
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--seminars
+        

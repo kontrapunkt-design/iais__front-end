@@ -1,0 +1,44 @@
+input{
+  &[class^='input--']{
+    background: transparent;
+    border-color: $color--primary;
+    border-width: 1px;
+    border-style: solid;
+    &:focus{
+      border-color: $white;
+      border-width: 1px;
+      border-style: solid;
+      background: $white;
+    }
+  }
+}
+
+.input-group{
+  .prefix{
+    border-right: none;
+  }
+  .postfix{
+    border-left: none !important;
+  }
+  .comp__filter{
+    padding-bottom: 0;
+  }
+  .input--search{
+    margin-bottom: 0;
+    line-height: rem-calc(38px);
+    font-size: rem-calc(20px);
+    height: auto;
+    &:focus{
+      border-left-color: $color--primary;
+    }
+  }
+  .button.large{
+    margin-bottom: 0;
+    border: 1px solid $color--primary !important;
+    font-size: rem-calc(20px);
+    &:hover{
+      background-color: $color--accent !important;
+      border-color: $color--accent!important;
+    }
+  }
+}

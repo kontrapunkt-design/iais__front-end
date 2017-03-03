@@ -4,11 +4,10 @@
   border-radius: 100%;
   transition: all 0.3s $global-easeing;
   position: absolute;
-  top: 50%;
-  right: $spacing--large;
+  top: $spacing--medium*1.5;
+  right: $spacing--medium;
   background-color: $color--accent;
-  transform: translateY(-50%);
-  z-index: $layer--overlay + 200;
+  z-index: $layer--overlay + 500;
   &:hover{
     cursor: pointer;
     background-color: $color--primary;

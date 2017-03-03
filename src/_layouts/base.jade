@@ -18,7 +18,7 @@ head
   meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
   title iais front end
   meta(name='description', content= 'A new Yeogurt application')
-  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no')
   block stylesheets
     link(rel='stylesheet', href= baseUrl + 'styles/main.css')
 
@@ -34,9 +34,11 @@ body
   section.site--main
     block site--main
   section.site--footer
-    .container.container--top-border
+    .container.container--bgcolor02
       include ../_modules/components/comp__site--footer
-  
+  #cover
+    include ../_modules/components/comp__logo
+    #loading-container
   block scripts
     script(src= baseUrl + 'scripts/main.js')
 

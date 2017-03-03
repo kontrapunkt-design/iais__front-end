@@ -11,7 +11,7 @@ export default()=>{
               })
               .then(function(content) {
                   // Set the tooltip content upon successful retrieval
-                  let elements = $("<div />").append( $.parseHTML(content) ).find('h1');
+                  let elements = $("<div />").append( $.parseHTML(content) ).find('.comp__tooltips');
 
                   api.set('content.text', elements);
               }, function(xhr, status, error) {
@@ -22,18 +22,25 @@ export default()=>{
               return 'Loading...'; // Set some initial text
           }
       },
+      show: {
+        solo: true,
+      },
       hide: {
-        event: 'click mouseleave',
+        event: 'click unfocus',
           // event: false,
           // inactive: 500
       },
       position: {
+        // target: 'mouse',
          my: 'left top',
          at: 'right top',
-         adjust: {
-             x: -10
-         }
-       },
+        viewport: $(window),
+        adjust: {
+           mouse: false,
+           x: -10,
+           y: -10
+        }
+      },
       style: {
         classes: 'comp__tooltips'
       }

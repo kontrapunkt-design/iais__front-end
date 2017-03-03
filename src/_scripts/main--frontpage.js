@@ -5,5 +5,7 @@
 import compFronthero from './components/compFronthero';
 
 $(() => {
-  compFronthero();
+  setTimeout(function(){
+    compFronthero();
+  }, 3000)
 });

@@ -1,0 +1,35 @@
+.comp__section--related_list
+  .comp__section__title
+    h5 related content
+  .comp__section__content
+    .row
+      .small-12.medium-4.large-4.column
+        - var news = site.data.news_list[1]
+        .comp__thumbnail--news
+          a(href="#")
+            .comp__content
+              p.tag.label #{news.tag}
+              h4.title.title--news #{news.title}
+              if news.teaser
+                p.teaser.teaser--news #{news.teaser}
+              p.meta.date #{news.date}
+      .small-12.medium-4.large-4.column
+        - var report = site.data.report_list[2]
+        .comp__thumbnail--report
+          a(href="#")
+            .comp__content
+              p.tag.label #{report.tag}
+              h4.title.title--report #{report.title}
+              if report.teaser
+                p.teaser.teaser--report #{report.teaser}
+              p.meta.date #{report.date}
+      .small-12.medium-4.large-4.column
+        - var magazine = site.data.magazine_list[0]
+        .comp__thumbnail--magazine
+          a(href="#")
+            .comp__content
+              p.tag.label #{magazine.tag}
+              h4.title.title--magazine #{magazine.title}
+              if magazine.teaser
+                p.teaser.teaser--magazine #{magazine.teaser}
+              p.meta.date #{magazine.date}

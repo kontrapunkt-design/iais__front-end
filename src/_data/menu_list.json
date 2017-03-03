@@ -1,11 +1,27 @@
 [{
-  "name": "News"
+  "name": "News",
+  "link": "#"
 },{
-  "name": "Publications"
+  "name": "Reports",
+  "link": "page--reports.html"
 },{
-  "name": "Seminars"
+  "name": "Seminars",
+  "link": "#"
 },{
-  "name": "Magazine"
+  "name": "Magazine",
+  "link": "#"
 },{
-  "name": "About Us"
+  "name": "About Us",
+  "link": "#",
+  "submenu": [
+    {"name": "Service",
+    "link":"#"
+  },
+    {"name": "Join us",
+    "link":"#"
+  },
+    {"name": "Access",
+    "link":"#"
+  }
+  ]
 }]

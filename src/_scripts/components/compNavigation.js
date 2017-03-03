@@ -1,127 +1,130 @@
 'use restric'
-import {mobileMenuAnimation} from './globalAnimation';
-
+import {mobileMenuAnimation, logoMiniAnimation} from './globalAnimation';
+import scrollMonitor from 'scrollMonitor';
 
 export default()=>{
   console.log('load navigation');
 
-  let navigaitonLogoHeight = document.querySelector('.site--header .comp__logo').offsetHeight;
-  let siteHeader = document.querySelector('.site--header');
-  let navigation = document.querySelector('.site--header .comp__navigation');
-  let menuToggle = document.querySelector('.comp__toggle-menu');
-  let siteMain = document.querySelector('.site--main');
-  let siteLogo = document.querySelector('.site--header .comp__logo .icon--logo');
 
-  let navigationLsItem = document.getElementById('navLs').children;
+  let navLogo = document.querySelector('.site--header .comp__logo');
+  let navLogoHeight = navLogo.offsetHeight;
+
+  let htmlEl = document.getElementsByTagName( 'html' )[0];
+
+  let siteHeader = document.querySelector('.site--header');
+  let siteHeaderHeight = siteHeader.offsetHeight;
+  let siteLogo = document.querySelector('.site--header .comp__logo .icon--logo');
+  let siteLogoWidthLarge = 320;
+  let siteLogoWidthSmall = 280;
+  let siteMain = document.querySelector('.site--main');
+
+  let nav = document.querySelector('.site--header .comp__navigation');
+  let navLsItem = document.getElementById('navLs').children;
   let LangLs = document.getElementById('LangLs');
   let ToggleSearch = document.getElementById('ToggleSearch');
 
-  let isMobile = NaN;
+  let menuToggle = document.querySelector('.comp__toggle-menu');
   let menuStatus = false;
+  let scrollFire = false;
 
   function _isMobile(){
-    // let navLsW = document.getElementById('navLs').offsetWidth;
-    let navLsItem = document.querySelectorAll('.site--header .navigation__list .list-item a');
-    let navLsItemW = 0;
-    for(var i = 0; i < navLsItem.length; i++){
-        navLsItemW += navLsItem[i].offsetWidth;
+    let navLsMenuItem = document.querySelectorAll('.site--header .navigation__list .list-item a');
+    let navLsMenuItemW = 0;
+    for(var i = 0; i < navLsMenuItem.length; i++){
+        navLsMenuItemW += navLsMenuItem[i].offsetWidth;
     }
     let LangLsW = LangLs.offsetWidth;
     let ToggleSearchW = ToggleSearch.offsetWidth;
-    let offset = 80;
-    let taregtW = navLsItemW + LangLsW + ToggleSearchW + offset;
+
+    let offset = 120;
+
+    let taregtW = navLsMenuItemW + LangLsW + ToggleSearchW + offset;
     let vpW = window.innerWidth;
 
     if(vpW > taregtW){
-      isMobile = false
-      navigation.classList.remove('mobile');
-      navigation.style.visibility = 'visible';
-      navigation.style.position = 'relative';
-      navigation.style.display = 'block';
-      navigation.style.opacity = 1;
-      siteLogo.style.width = '231px'
-      TweenMax.set([navigationLsItem, LangLs, ToggleSearch], {
+      nav.classList.remove('mobile');
+      // set logo width for desktop
+      siteLogo.style.width = siteLogoWidthLarge + 'px'
+      // set nav to visible
+      TweenMax.set(nav, {
+        visibility: 'visible',
+        position: 'relative',
+        display: 'block',
+        opacity: 1
+      });
+      // set position of desktop nav items
+      TweenMax.set([navLsItem, LangLs, ToggleSearch], {
         opacity: 1,
         y: 0
-      })
-      // document.querySelectorAll('.site--header .navigation__list .list-item').style.opacity = 1;
-      document.getElementsByTagName( 'html' )[0].classList.remove('mobile-menu');
-      document.getElementsByTagName( 'html' )[0].classList.remove('mobile-menu--closed');
-      document.getElementsByTagName( 'html' )[0].classList.remove('mobile-menu--opened');
+      });
+      // reset html class
+      htmlEl.classList.remove('mobile-menu');
+      htmlEl.classList.add('mobile-menu--closed');
+      htmlEl.classList.remove('mobile-menu--opened');
 
       setTimeout(function(){
-        let siteMainOffst = navigaitonLogoHeight + navigation.offsetHeight + 'px'
-        siteMain.style.paddingTop = siteMainOffst;
+        siteMain.style.paddingTop = siteHeaderHeight + 1 + 'px';
       }, 500)
 
-
-
     }else if(vpW < taregtW){
-      isMobile = true
-      navigation.classList.add('mobile');
-      navigation.style.visibility = 'hidden';
-      navigation.style.display = 'flex';
-      navigation.style.position = 'absolute';
-      siteLogo.style.width = '120px'
-      document.getElementsByTagName( 'html' )[0].classList.add('mobile-menu');
-
-      siteMain.style.paddingTop = siteHeader.offsetHeight + 'px';
-
+      nav.classList.add('mobile');
+      nav.style.visibility = 'hidden';
+      nav.style.display = 'flex';
+      nav.style.position = 'absolute';
+      siteLogo.style.width = siteLogoWidthSmall + 'px';
+      // set html class to mobile
+      htmlEl.classList.add('mobile-menu');
+      siteMain.style.paddingTop = siteHeader.offsetHeight + 1 + 'px';
     }
-    return isMobile
   }
-
 
   function _toggle(){
-      menuToggle.addEventListener('click', function(){
-        if(menuStatus === false){
-          mobileMenuAnimation().animation.play();
-          navigation.style.visibility = 'visible';
-          navigation.style.position = 'absolute';
-          document.getElementsByTagName( 'html' )[0].classList.add('mobile-menu--opened');
-          document.getElementsByTagName( 'html' )[0].classList.remove('mobile-menu--closed');
-          menuStatus = true;
-        }else{
-          mobileMenuAnimation().animation.reverse(0);
-          setTimeout(function(){
-            document.getElementsByTagName( 'html' )[0].classList.remove('mobile-menu--opened');
-            document.getElementsByTagName( 'html' )[0].classList.add('mobile-menu--closed');
-          }, 450);
-          menuStatus = false;
-        }
-      });
-
+    menuToggle.addEventListener('click', function(){
+      if(menuStatus === false){
+        mobileMenuAnimation().animation.play();
+        nav.style.visibility = 'visible';
+        nav.style.position = 'fixed';
+        // toggle html class
+        htmlEl.classList.add('mobile-menu--opened');
+        htmlEl.classList.remove('mobile-menu--closed');
+        menuStatus = true;
+      }else{
+        mobileMenuAnimation().animation.reverse(0);
+        setTimeout(function(){
+          // toggle html class
+          htmlEl.classList.remove('mobile-menu--opened');
+          htmlEl.classList.add('mobile-menu--closed');
+        }, 450);
+        menuStatus = false;
+      }
+    });
   }
 
-  function _fixHeader(){
-    if(window.scrollY>navigaitonLogoHeight){
-      siteHeader.classList.add('header-sticky');
-      // siteMain.style.paddingTop = navigaitonLogoHeight + 'px';
-    }else{
-      siteHeader.classList.remove('header-sticky');
-      // siteMain.style.paddingTop = 0 + 'px';
-    }
-  }
+  let WatcherNav = scrollMonitor.create(navLogo);
+  WatcherNav.exitViewport(function() {
+    siteHeader.classList.add('header-sticky');
+    logoMiniAnimation().animation.play();
+  });
+  WatcherNav.enterViewport(function() {
+    siteHeader.classList.remove('header-sticky');
+    logoMiniAnimation().animation.reverse(0);
+  });
+
 
   function _init(){
     window.addEventListener('load',
     function(){
-      _isMobile();
-      // siteMain.style.paddingTop = siteMainOffst;
     });
     window.addEventListener('resize',
     function(){
       _isMobile();
-      // siteMain.style.paddingTop = siteMainOffst;
     });
     window.addEventListener('orientationchange',
     function(){
-      // siteMain.style.paddingTop = siteMainOffst;
       _isMobile();
     });
     window.addEventListener('scroll',
     function(){
-      _fixHeader();
     });
   }
 

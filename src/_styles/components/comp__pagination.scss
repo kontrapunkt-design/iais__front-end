@@ -10,13 +10,26 @@
         padding:$spacing--small*0.5 $spacing--small*1.25;
         &:hover{
           color:$color--accent;
-          border-bottom: 5px solid $color--accent;
+          border-bottom: 3px solid $color--accent;
         }
       }
       &.current{
         a{
           color:$color--accent;
-          border-bottom: 5px solid $color--accent;
+          border-bottom: 3px solid $color--accent;
+        }
+        @include breakpoint(small only){
+          display: inline-block;
+        }
+      }
+      &.pagination-previous, &.pagination-next{
+        @include breakpoint(small only){
+          border: 1px solid $color--primary;
+          margin: 0 $spacing--medium;
+          &.disabled{
+            padding:$spacing--small*0.5 $spacing--small;
+            border-color: $medium-gray;
+          }
         }
       }
       &.ellipsis{

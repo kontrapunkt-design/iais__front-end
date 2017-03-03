@@ -1,0 +1,13 @@
+.button-group{
+  .button{
+    margin: $spacing--medium*0.5 0 !important;
+    &:first-child{
+      border-right: none;
+      margin-right: 0;
+    }
+    &:last-child{
+      border-left: none;
+      margin-left: 0;
+    }
+  }
+}

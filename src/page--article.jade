@@ -1,0 +1,92 @@
+extends _layouts/base
+
+block scripts
+  script(src= baseUrl + 'scripts/main.js')
+  script(src= baseUrl + 'scripts/main--article.js')
+
+
+block site--main
+  - var article = site.data.article_a[0]
+  .container.container--top-border.container--no-bottom-padding.container--hero
+    .row.align-left
+      .small-12.medium-10.column
+        .comp__page-title.comp__page-title--article
+          .meta-group
+            p.label.tag #{article.topic}
+            p.meta.date #{article.date}
+          .title-group
+            h1 #{article.title}
+            p.teaser #{article.teaser}
+  .container.container--no-padding
+    .row
+      .small-12.medium-10.large-8.medium-offset-1.medium-offset-2.column
+        article.comp__article
+          h3 #{article.header01}
+          - each line in article.paragraph01.split(/\n/)
+            p #{line}
+          br
+          - each figure in article.figure
+            figure.figure
+              img(src= "#{figure.imgsrc}")
+              figcaption.figcaption #{figure.caption}
+          h3 #{article.header02}
+          - each line in article.paragraph02.split(/\n/)
+            p #{line}
+          br
+          - each quote in article.quote
+            blockquote.blockquote
+              p #{quote.blockquote}
+              footer
+                a(href="kontrapunkt.com" target="_blank") some link 
+                |  text element 
+                cite
+                  a(href="kontrapunkt.com" target="_blank") #{quote.source}
+          - each line in article.paragraph03.split(/\n/)
+            p #{line}
+          br
+          ul
+            li item 01
+            li item 02
+            li item 03
+            li item 04
+          ol
+            li item 01
+            li item 02
+            li item 03
+            li item 04
+          p 
+            | Lorem ipsum dolor sit amet, 
+            | consectetur adipisicing elit, sed do 
+            a(href="#") this is a inline link  
+            |  labore et dolore magna aliqua. Ut enim ad minim veniam.
+          .comp__call-to-action
+            .comp__title
+              h4 This is the call to action button area
+            .comp__content
+              a.button.button--outline.button--accent.large Large accent
+              a.button.button--outline.button--primary.medium Medium accent
+              a.button.button--outline.button--accent.small Small accent
+          .comp__call-to-action
+            .comp__title
+              h4 This is the call to action button group area
+            .comp__content
+              .button-group
+                a.button.button--outline.button--accent Button accent
+                a.button.button--outline.button--accent Button accent
+                a.button.button--outline.button--accent Button accent
+              .button-group
+                a.button.button--outline.button--primary Button primary
+                a.button.button--outline.button--primary Button primary
+                a.button.button--outline.button--primary Button primary
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__swiper-gallery
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--profile_list
+  .container.container--top-border
+    .row
+      .small-12.column
+        include _modules/components/comp__section--related_list

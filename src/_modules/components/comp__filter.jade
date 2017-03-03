@@ -1,5 +1,5 @@
-mixin comp__filter-group(id)
-  .comp__filter-group
+mixin comp__filter(id, className)
+  .comp__filter(class='#{className}')
     select.select--topic.prefix(id=id)
       - each topic in site.data.topic_list
         option(value='#{topic.name}') #{topic.name}

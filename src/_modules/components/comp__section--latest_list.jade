@@ -4,13 +4,14 @@
   .comp__section__content
     .row
       - each latest in site.data.latest_list
-        .comp__thumbnail--latest.small-12.column()
-          a(href="#")
-            .comp__content
-              p.tag.label #{latest.tag}
-              h4.title.title--latest #{latest.title}
-              p.teaser.teaser--latest #{latest.teaser}
-              p.meta.date #{latest.date}
+        .small-12.column
+          .comp__thumbnail--latest()
+            a(href="#")
+              .comp__content
+                p.tag.label #{latest.tag}
+                h4.title.title--latest #{latest.title}
+                p.teaser.teaser--latest #{latest.teaser}
+                p.meta.date #{latest.date}
   .comp__section__action
     a.button.large.button--with-icon.button--outline.button--accent
       span.text more in latest

@@ -1,0 +1,94 @@
+.comp__front-hero--A{
+  position: relative;
+  padding:0 0 $spacing--large;
+  @include breakpoint(small only){
+    padding-bottom: 0;
+  }
+  &__sequence{
+    display: block;
+    &.sequence1{
+      position: relative;
+      margin-bottom: $spacing--large;
+      .title{
+        @extend h4;
+        border-top: 5px solid $white;
+        padding-top: $spacing--medium !important;
+      }
+      @include breakpoint(medium up){
+        margin-bottom: 0;
+      }
+    }
+    &.sequence2{
+      padding-bottom: 0;
+      .title{
+        opacity: 0;
+        @extend h4;
+      }
+    }
+  }
+  .comp__action{
+    margin-top: $spacing--large;
+    .button--outline{
+      border-color: $white;
+      &:hover{
+        background-color: $white !important;
+        color: $color--primary;
+      }
+    }
+  }
+  .comp__content{
+    .services{
+      list-style: none;
+      margin-left: 0;
+      .services-item{
+        @extend h2;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: auto;
+        position: relative;
+        overflow-y: hidden;
+        .icon{
+          display: inline-block;
+          position: relative;
+          float: left;
+          width: auto;
+          height: auto;
+          margin-left:$spacing--small;
+          margin-right: $spacing--medium;
+          display: none;
+          svg{
+            fill:$white;
+          }
+          &--report{
+            width: 53px;
+            height: 46px;
+          }
+          &--communication{
+            width: 53px;
+            height: 37px;
+          }
+          &--ICTservice{
+            width: 53px;
+            height: 35px;
+          }
+        }
+        .inner{
+          display: block;
+          opacity: 0;
+          font-weight: 600 !important;
+        }
+      }
+    }
+  }
+}
+.comp__overlay{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: linear-gradient(to top, rgba(38,57,124,1) 20%, rgba(38,57,124,0) 100%);
+  z-index: $layer--content;
+}

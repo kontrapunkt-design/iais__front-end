@@ -1,4 +1,4 @@
-include _modules/components/comp__filter-group
+include _modules/components/comp__filter
 
 extends _layouts/base
 
@@ -11,12 +11,17 @@ block site--main
   .container.container--no-padding.container--top-border
     .row.align-left
       .small-12.column
-        .comp__page-title.comp__page-title--overview
+        .comp__page-title.comp__page-title--section
           h1 報告書
   .container.container--no-padding
-    .row.align-left
-      .small-12.column.shrink
-        +comp__filter-group('isotopeFilter')
+    .comp__filter-group#compFilterGroup
+      .row.align-left
+        .small-12.column.medium-expand
+          +comp__filter('isotopeFilter', 'comp__filter--accent')
+        .small-12.column.medium-expand
+          +comp__filter('isotopeFilter02')
+        .small-12.column.medium-expand
+          +comp__filter('isotopeFilter03')
   .container.container--top-border.container--no-bottom-padding
     .row
       .small-12.column

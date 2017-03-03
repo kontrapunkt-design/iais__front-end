@@ -3,35 +3,31 @@
   top: 0;
   left: 0;
   position: absolute;
-  background-color: $color--accent;
+  background-color: $color--background01;
   width: 100%;
   height: 100%;
-  z-index: $layer--navigation;
+  z-index: $layer--content + 200;
   .input-group{
-    width: 60%;
+    width: 80%;
     margin: auto;
     // background-color: $white;
     .row{
       margin: auto;
       width: 100%;
     }
+    @include breakpoint(small only){
+      z-index: $layer--navigation + 200;
+      .comp__filter{
+        .select--topic{
+          width: 20px;
+        }
+      }
+    }
     @include breakpoint(large up){
       width: 60%;
     }
     @include breakpoint(xlarge up){
       width: 50%;
-    }
-    .comp__filter-group{
-      padding-bottom: 0;
-    }
-    .input--search{
-      margin-bottom: 0;
-      line-height: rem-calc(38px);
-      font-size: rem-calc(20px);
-      height: auto;
-    }
-    .button{
-      margin-bottom: 0;
     }
   }
 }
