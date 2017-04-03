@@ -1,10 +1,9 @@
 .comp__front-hero{
   position: relative;
-  padding:0 0 $spacing--large;
+  padding:0 0;
   &__sequence{
     display: block;
     &.sequence1{
-      position: absolute;
       z-index: $layer--content + 1;
       a.button{
         opacity: 0;
@@ -27,6 +26,15 @@
     }
   }
   .comp__content{
+    &__statement{
+      margin-bottom: $spacing--large;
+      opacity: 0;
+      h1{
+        @extend h4;
+        line-height: 1.5em !important;
+        font-weight: 600 !important;
+      }
+    }
     .title{
       @extend h3;
     }

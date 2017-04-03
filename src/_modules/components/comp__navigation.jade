@@ -17,6 +17,9 @@ include comp__filter
         - each menu in site.data.menu_list
           li.list-item
             a(href="#{menu.link}") #{menu.name}
+    .comp__login
+      .toggle--login#ToggleLogin
+        a(href="#") login
     .comp__language-selector.column.shrink#LangLs
       ul.language__list
         li.list-item.active 日本語

@@ -1,0 +1,10 @@
+.comp__login{
+  .toggle--login{
+    padding-right:$spacing--medium*1.5;
+    padding-left:$spacing--small; 
+    text-transform: uppercase;
+    font-weight: 600;
+    @include breakpoint(small only){
+    }
+  }
+}

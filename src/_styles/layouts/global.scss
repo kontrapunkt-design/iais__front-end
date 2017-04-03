@@ -44,6 +44,9 @@ html, body{
       padding-bottom:0;
     }
     &--hero{
+      background: $color--primary no-repeat center center url('../images/front-hero.jpg');
+      // background-blend-mode: multiply;
+      background-size: cover;
       .row{
         position: relative;
       }

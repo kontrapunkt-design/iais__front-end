@@ -1,0 +1,9 @@
+.comp__tagline{
+  display: none;
+  color: $color--primary;
+  font-weight: 600;
+  margin-bottom: $spacing--medium;
+  @include breakpoint(mlarge up){
+    display: block;
+  }
+}

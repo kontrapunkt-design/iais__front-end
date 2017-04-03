@@ -14,14 +14,15 @@ export default()=>{
   let siteHeader = document.querySelector('.site--header');
   let siteHeaderHeight = siteHeader.offsetHeight;
   let siteLogo = document.querySelector('.site--header .comp__logo .icon--logo');
-  let siteLogoWidthLarge = 320;
-  let siteLogoWidthSmall = 280;
+  let siteLogoWidthLarge = 200;
+  let siteLogoWidthSmall = 200;
   let siteMain = document.querySelector('.site--main');
 
   let nav = document.querySelector('.site--header .comp__navigation');
   let navLsItem = document.getElementById('navLs').children;
   let LangLs = document.getElementById('LangLs');
   let ToggleSearch = document.getElementById('ToggleSearch');
+  let navLogin = document.getElementById('ToggleLogin');
 
   let menuToggle = document.querySelector('.comp__toggle-menu');
   let menuStatus = false;
@@ -35,10 +36,11 @@ export default()=>{
     }
     let LangLsW = LangLs.offsetWidth;
     let ToggleSearchW = ToggleSearch.offsetWidth;
+    let navLoginW = navLogin.offsetWidth;
 
     let offset = 120;
 
-    let taregtW = navLsMenuItemW + LangLsW + ToggleSearchW + offset;
+    let taregtW = navLsMenuItemW + LangLsW + ToggleSearchW + navLoginW + offset;
     let vpW = window.innerWidth;
 
     if(vpW > taregtW){

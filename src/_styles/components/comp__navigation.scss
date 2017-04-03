@@ -55,6 +55,7 @@
       float: left;
       opacity: 0.5;
       transition: all 0.3s $global-easeing;
+      font-weight: 600;
       &:first-child{
         &:after{
           display: inline-block;
