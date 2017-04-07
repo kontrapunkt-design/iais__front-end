@@ -44,9 +44,11 @@
       position: relative;
       margin-bottom:$spacing--small;
       &:hover{
-        .line{
-          background-color: $white;
-          transition: background-color 0.2s $global-easeing;
+        .inner{
+          .line{
+            background-color: $white;
+            transition: background-color 0.2s $global-easeing;
+          }          
         }
       }
       .inner{
@@ -56,6 +58,9 @@
         width: auto;
         position: relative;
         overflow-y: hidden;
+        .line{
+          background-color: transparent;
+        }
       }
       .icon{
         display: inline-block;
